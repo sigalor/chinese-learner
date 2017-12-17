@@ -1,0 +1,25 @@
+{
+  "name": "chinese-learner",
+  "version": "1.0.0",
+  "description": "A program that will help you learn Chinese vocabulary, phrases and numbers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js",
+    "start": "npm run dev",
+    "dev": "concurrently --kill-others \"./node_modules/.bin/nodemon index.js -i client -e js\" \"sass --sourcemap=none --watch client/css/main.scss:client/css/main.css\""
+  },
+  "author": "sigalor",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "express": "^4.16.2",
+    "fs": "0.0.1-security",
+    "lodash": "^4.17.4",
+    "path": "^0.12.7",
+    "querystring": "^0.2.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "nodemon": "^1.12.5"
+  }
+}
