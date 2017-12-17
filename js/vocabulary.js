@@ -3,7 +3,7 @@
 
 let vocabulary = [
 	{
-		charCacheFile: "/cache/lection01_char_cache.json",
+		charCacheFile: "/char_cache/lection01_char_cache.json",
 		words: [
 			{
 				german: "du, Sie",
@@ -43,7 +43,7 @@ let vocabulary = [
 		]
 	},
 	{
-		charCacheFile: "/cache/lection02_char_cache.json",
+		charCacheFile: "/char_cache/lection02_char_cache.json",
 		words: [
 			{
 				german: "beschäftigt sein",
@@ -123,7 +123,7 @@ let vocabulary = [
 		]
 	},
 	{
-		charCacheFile: "/cache/lection03_char_cache.json",
+		charCacheFile: "/char_cache/lection03_char_cache.json",
 		words: [
 			{
 				german: "sie (3. Person Singular)",
@@ -203,7 +203,7 @@ let vocabulary = [
 		]
 	},
 	{
-		charCacheFile: "/cache/lection04_char_cache.json",
+		charCacheFile: "/char_cache/lection04_char_cache.json",
 		words: [
 			{
 				german: "jmd. kennen, kennenlernen",
@@ -313,7 +313,7 @@ let vocabulary = [
 		]
 	},
 	{
-		charCacheFile: "/cache/lection05_char_cache.json",
+		charCacheFile: "/char_cache/lection05_char_cache.json",
 		words: [
 			{
 				german: "Speisesaal, Restaurant",
@@ -413,7 +413,7 @@ let vocabulary = [
 		]
 	},
 	{
-		charCacheFile: "/cache/lection06_char_cache.json",
+		charCacheFile: "/char_cache/lection06_char_cache.json",
 		words: [
 			{
 				german: "gehen",
@@ -523,7 +523,7 @@ let vocabulary = [
 		]
 	},
 	{
-		charCacheFile: "/cache/lection07_char_cache.json",
+		charCacheFile: "/char_cache/lection07_char_cache.json",
 		words: [
 			{
 				german: "mit der Schule/dem Semester beginnen",
