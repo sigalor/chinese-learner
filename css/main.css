@@ -1,0 +1,412 @@
+@charset "UTF-8";
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Josefin Sans', Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(#fff 40%, #ddd);
+  background-attachment: fixed;
+  overflow: hidden; }
+
+.fa-erase-left:before {
+  font-family: 'Noto Sans';
+  content: '⌫'; }
+
+.invisible {
+  visibility: hidden; }
+
+h1.big-heading {
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 9vh;
+  margin-bottom: 2vh; }
+
+#lecture-chooser {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.4s ease-in, opacity 0.4s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  #lecture-chooser.in-background {
+    transform: scale(0.97);
+    opacity: 0.0; }
+  #lecture-chooser > #lecture-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 65vw; }
+    #lecture-chooser > #lecture-list > .lecture-button {
+      width: 25vh;
+      height: 25vh;
+      max-width: 13vw;
+      max-height: 13vw;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      background-color: rgba(255, 255, 255, 0.5);
+      margin: 2vh;
+      transition: transform 0.15s ease-out, border 0.2s, opacity 0.2s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; }
+      #lecture-chooser > #lecture-list > .lecture-button:hover {
+        transform: scale(1.05);
+        border: 1px solid rgba(0, 0, 0, 0.7); }
+      #lecture-chooser > #lecture-list > .lecture-button.item-chosen {
+        transition: transform 0.2s ease-in, opacity 0.2s ease-in;
+        transform: scale(1.5);
+        opacity: 0.0; }
+      #lecture-chooser > #lecture-list > .lecture-button > .title {
+        text-transform: uppercase;
+        font-size: 3vh;
+        font-weight: 300; }
+      #lecture-chooser > #lecture-list > .lecture-button > .sub-title {
+        font-weight: 500;
+        font-size: 1.6vh; }
+
+#learner-back-button {
+  position: absolute;
+  top: 1.5%;
+  left: 1%;
+  font-size: 1.3vh;
+  font-weight: 300;
+  text-transform: uppercase;
+  transition: opacity 0.3s; }
+  #learner.invisible + #learner-back-button {
+    opacity: 0.0; }
+
+#learner {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.4s ease-out, opacity 0.4s;
+  transform: scale(1);
+  opacity: 1.0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  #learner.in-background {
+    transform: scale(1.07);
+    opacity: 0.0; }
+  #learner.fade-to-background {
+    transform: scale(0.97);
+    opacity: 0.0; }
+  #learner > .heading-container {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center; }
+    #learner > .heading-container > h1.big-heading {
+      margin-bottom: 0; }
+  #learner > .task {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    width: 40%;
+    height: 80%;
+    padding-bottom: 5%;
+    transition: left 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; }
+    #learner > .task > .task-description {
+      text-transform: uppercase;
+      font-weight: 300;
+      font-size: 2vh;
+      margin-bottom: 0.5vh; }
+    #learner > .task > .task-main {
+      font-weight: 400;
+      font-size: 6.5vh;
+      margin-bottom: 2vh;
+      font-family: 'Source Sans Pro'; }
+    #learner > .task > .task-content > .multiple-choice {
+      width: 30vw;
+      min-width: 45vh;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap; }
+      #learner > .task > .task-content > .multiple-choice:not(.is-decided) > .item:not(.correct):not(.incorrect) > .item-container:hover {
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        background-color: #f8f8f8; }
+      #learner > .task > .task-content > .multiple-choice > .item {
+        width: 50%;
+        height: 15vh;
+        padding: 1.3vh 2.2vh; }
+        #learner > .task > .task-content > .multiple-choice > .item.correct > .item-container {
+          background-color: #00d261; }
+        #learner > .task > .task-content > .multiple-choice > .item.incorrect > .item-container {
+          background-color: #d20000; }
+        #learner > .task > .task-content > .multiple-choice > .item > .item-container {
+          width: 100%;
+          height: 100%;
+          border-radius: 15px;
+          border: 1px solid rgba(0, 0, 0, 0.15);
+          background-color: #fff;
+          transition: border 0.2s, background-color 0.2s;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          #learner > .task > .task-content > .multiple-choice > .item > .item-container > .item-content {
+            font-size: 5vh;
+            font-family: 'Source Sans Pro'; }
+    #learner > .task > .task-content > .keyboard {
+      width: 33vw;
+      min-width: 45vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column; }
+      #learner > .task > .task-content > .keyboard:not(.is-decided) > .input > .erase-char:active > .erase-char-content {
+        transform: scale(0.9); }
+      #learner > .task > .task-content > .keyboard:not(.is-decided) > .input > .submit:hover > .submit-content {
+        transform: scale(1.3); }
+      #learner > .task > .task-content > .keyboard > .input {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: row; }
+        #learner > .task > .task-content > .keyboard > .input > input.text-input {
+          width: 87%;
+          padding-right: 9%;
+          border: 1px solid #ccc;
+          font-size: 3vh;
+          font-weight: 300;
+          font-family: 'Source Sans Pro';
+          text-align: center;
+          transition: background-color 0.4s, color 0.4s;
+          margin-left: 6.5%; }
+          #learner > .task > .task-content > .keyboard > .input > input.text-input.correct {
+            background-color: #00d261;
+            color: white; }
+          #learner > .task > .task-content > .keyboard > .input > input.text-input.incorrect {
+            background-color: #d20000;
+            color: white; }
+        #learner > .task > .task-content > .keyboard > .input > .erase-char {
+          position: absolute;
+          right: 8%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          #learner > .task > .task-content > .keyboard > .input > .erase-char > .erase-char-content {
+            font-size: 2.2vh;
+            transition: transform 0.2s; }
+        #learner > .task > .task-content > .keyboard > .input > .submit {
+          width: 5%;
+          margin-left: 1.5%;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          #learner > .task > .task-content > .keyboard > .input > .submit > .submit-content {
+            font-size: 3vh;
+            transition: transform 0.2s; }
+      #learner > .task > .task-content > .keyboard:not(.is-decided) > .keys > .key > .key-container:hover {
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        background-color: #f8f8f8; }
+      #learner > .task > .task-content > .keyboard > .keys {
+        width: 70%;
+        margin-top: 1.5vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap; }
+        #learner > .task > .task-content > .keyboard > .keys > .key {
+          width: calc(100% / 6);
+          height: 5.4vh;
+          padding: 0.5vh 0.7vh; }
+          #learner > .task > .task-content > .keyboard > .keys > .key > .key-container {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            background-color: #fff;
+            transition: border 0.2s, background-color 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+            #learner > .task > .task-content > .keyboard > .keys > .key > .key-container > .key-content {
+              font-size: 2vh;
+              font-weight: 300;
+              font-family: 'Source Sans Pro'; }
+    #learner > .task > .task-content > .word-chooser {
+      width: 28vw;
+      min-width: 45vh; }
+      #learner > .task > .task-content > .word-chooser:not(.is-decided) > .input > .submit:hover > .submit-content {
+        transform: scale(1.3); }
+      #learner > .task > .task-content > .word-chooser:not(.is-decided) .word:not(.dummy):not(.chosen) > .word-container:hover {
+        background-color: #5dbaf0; }
+      #learner > .task > .task-content > .word-chooser > .input {
+        width: 100%;
+        padding: 0 2%;
+        margin-bottom: 2.5vh;
+        border-bottom: 1px solid #bbb;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 10px 10px 0px 0px;
+        transition: background-color 0.4s; }
+        #learner > .task > .task-content > .word-chooser > .input.correct {
+          background-color: #00d261; }
+        #learner > .task > .task-content > .word-chooser > .input.incorrect {
+          background-color: #d20000; }
+        #learner > .task > .task-content > .word-chooser > .input > .input-words {
+          width: 93.5%;
+          margin-left: 0%;
+          padding: 0.5vh;
+          display: flex;
+          flex-wrap: wrap; }
+        #learner > .task > .task-content > .word-chooser > .input > .submit {
+          width: 5%;
+          margin-left: 1.5%;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          #learner > .task > .task-content > .word-chooser > .input > .submit > .submit-content {
+            font-size: 3vh;
+            transition: transform 0.2s; }
+      #learner > .task > .task-content > .word-chooser > .options {
+        width: 90%;
+        margin-left: 5%;
+        display: flex;
+        flex-wrap: wrap; }
+      #learner > .task > .task-content > .word-chooser .word {
+        padding: 0.5vh; }
+        #learner > .task > .task-content > .word-chooser .word.dummy {
+          visibility: hidden;
+          width: 0;
+          padding: 0.5vh 0; }
+        #learner > .task > .task-content > .word-chooser .word.chosen > .word-container {
+          background-color: #eee;
+          color: rgba(0, 0, 0, 0); }
+          #learner > .task > .task-content > .word-chooser .word.chosen > .word-container > .word-content {
+            visibility: hidden; }
+        #learner > .task > .task-content > .word-chooser .word > .word-container {
+          padding: 0.8vh 2vh;
+          background-color: #33adf8;
+          border-radius: 10px;
+          display: inline-block;
+          transition: background-color 0.2s; }
+          #learner > .task > .task-content > .word-chooser .word > .word-container > .word-content {
+            color: white;
+            font-size: 2vh;
+            font-weight: 300;
+            font-family: 'Source Sans Pro'; }
+  #learner > .summary {
+    position: absolute;
+    top: 20%;
+    left: 100%;
+    width: 40%;
+    height: 80%;
+    padding-bottom: 5%;
+    transition: left 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; }
+    #learner > .summary > .summary-part:not(first-child) {
+      padding-top: 5vh; }
+    #learner > .summary > .summary-part > .part-description {
+      text-transform: uppercase;
+      font-weight: 300;
+      font-size: 2vh; }
+    #learner > .summary > .summary-part > .part-content {
+      font-weight: 400;
+      font-size: 6.5vh;
+      font-family: 'Source Sans Pro';
+      margin-top: -1vh; }
+    #learner > .summary > .summary-part > .part-stroke-order {
+      margin-top: 2vh;
+      margin-bottom: -0.5vh; }
+  #learner > .next-button {
+    position: absolute;
+    top: 20%;
+    left: 140%;
+    width: 20%;
+    height: 80%;
+    padding-bottom: 5%;
+    transition: transform 0.2s, left 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; }
+    #learner > .next-button:hover {
+      transform: translateX(2vh); }
+    #learner > .next-button > .next-button-content {
+      font-size: 10vh; }
+
+#all-stroke-order-characters-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; }
+  #all-stroke-order-characters-container > .char-container-outer {
+    position: relative; }
+    #all-stroke-order-characters-container > .char-container-outer > .char-container {
+      position: absolute;
+      width: 100%;
+      height: 100%; }
+      #all-stroke-order-characters-container > .char-container-outer > .char-container > svg > path.character-grid {
+        stroke-width: 1; }
+      #all-stroke-order-characters-container > .char-container-outer > .char-container > svg > g.stroke-order.preset {
+        fill: #ccc; }
+      #all-stroke-order-characters-container > .char-container-outer > .char-container > svg > g.stroke-order.animated {
+        fill: #333; }
+        #all-stroke-order-characters-container > .char-container-outer > .char-container > svg > g.stroke-order.animated > path {
+          transition-property: clip-path; }
+          #all-stroke-order-characters-container > .char-container-outer > .char-container > svg > g.stroke-order.animated > path.dir-left-right {
+            clip-path: inset(0% 100% 0% 0%); }
+          #all-stroke-order-characters-container > .char-container-outer > .char-container > svg > g.stroke-order.animated > path.dir-top-bottom {
+            clip-path: inset(0% 0% 100% 0%); }
+          #all-stroke-order-characters-container > .char-container-outer > .char-container > svg > g.stroke-order.animated > path.dir-right-left {
+            clip-path: inset(0% 0% 0% 100%); }
+          #all-stroke-order-characters-container > .char-container-outer > .char-container > svg > g.stroke-order.animated > path.dir-bottom-top {
+            clip-path: inset(100% 0% 0% 0%); }
+        #all-stroke-order-characters-container > .char-container-outer > .char-container > svg > g.stroke-order.animated:not(.shown) > path {
+          transition: none; }
+        #all-stroke-order-characters-container > .char-container-outer > .char-container > svg > g.stroke-order.animated.shown > path {
+          clip-path: inset(0% 0% 0% 0%); }
+    #all-stroke-order-characters-container > .char-container-outer:hover > .char-overlay {
+      opacity: 1.0; }
+    #all-stroke-order-characters-container > .char-container-outer > .char-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0.0;
+      transition: opacity 0.2s; }
+      #all-stroke-order-characters-container > .char-container-outer > .char-overlay > .reload-button {
+        width: 60%;
+        height: 60%;
+        border-radius: 100%;
+        background-color: rgba(0, 210, 97, 0.95);
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+        font-size: 27pt;
+        color: white;
+        text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center; }
