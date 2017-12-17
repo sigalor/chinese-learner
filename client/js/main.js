@@ -29,7 +29,7 @@ function initLectureList() {
 
 
 
-const USE_CACHE_ONLY = true;
+const USE_CACHE_ONLY = false;
 
 function createMultipleChoice(options, correctIdx) {
 	let mc = divClass("multiple-choice");
