@@ -11,7 +11,7 @@ let app = express();
 
 app.get("/strokeorder/:chars", async function(req, res) {
 	const sizeRef = 10000;
-	const charCacheFile = "cache/char_cache.json";
+	const charCacheFile = path.join(__dirname, "/client/cache/char_cache.json");
 	const buildCache = false;
 
 	let ret = new Array(req.params.chars.length);
@@ -40,7 +40,7 @@ app.get("/strokeorder/:chars", async function(req, res) {
 
 		if(buildCache) {
 			charCache.push(ret[idx]);
-			//console.log(`Added ${currChar} to character cache.`);
+			console.log(`Added ${currChar} to character cache.`);
 		}
 	}));
 

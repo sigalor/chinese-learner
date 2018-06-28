@@ -26,3 +26,6 @@ CSS3, this makes animating the stroke order so easy that only stuff like
 the individual SVG paths. 
 
 # Live version
+
+Visit [sigalor.github.io/chinese-learner](https://sigalor.github.io/chinese-learner/)
+to try out this application.

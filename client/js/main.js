@@ -23,7 +23,7 @@ function createLectureButton(index, title, subTitle) {
 function initLectureList() {
 	let lectureList = $("#lecture-list");
 	vocabulary.forEach((v, idx) => {
-		lectureList.append(createLectureButton(idx, `Lektion ${idx+1}`, `${v.words.length} Vokabeln`));
+		lectureList.append(createLectureButton(idx, v.name, `${v.words.length} Vokabeln`));
 	});
 }
 
@@ -284,7 +284,7 @@ function initLearner(lectionIndex) {
 	$("#learner")
 		.empty()
 		.append(backButton)
-		.append(divClass("heading-container").append(tagClass("h1", "big-heading").html(`Lektion ${lectionIndex+1}`)))
+		.append(divClass("heading-container").append(tagClass("h1", "big-heading").html(vocabulary[lectionIndex].name)))
 		.append(createTask(fromLang, toLang, wordObj))
 		.append(createSummary(wordObj, vocabulary[lectionIndex].charCacheFile))
 		.append(createNextButton());
@@ -310,12 +310,12 @@ function initAllLetters() {
 
 
 
-async function buildCharCache() {
-	for(let lection = 0; lection < vocabulary.length; lection++) {
-		if(!confirm(`Now building cache for lection ${lection+1}.`))
+async function buildCharCache(index) {
+	for(let lection = index || 0; lection <= index || vocabulary.length-1; lection++) {
+		if(!confirm(`Now building cache for lection ${vocabulary[lection].name}.`))
 			continue;
-		for(let wordIdx = 0; wordIdx < vocabulary[lection].length; wordIdx++)
-			await $.get("/strokeorder/" + vocabulary[lection][wordIdx].mandarin);
+		for(let wordIdx = 0; wordIdx < vocabulary[lection].words.length; wordIdx++)
+			await $.get("/strokeorder/" + vocabulary[lection].words[wordIdx].mandarin);
 		alert(`Done building cache for lection ${lection+1}.`);
 	}
 }
@@ -323,6 +323,7 @@ async function buildCharCache() {
 $(document).ready(function() {
 	initAllLetters();
 	initLectureList();
+	//buildCharCache(11);
 
 	$("#learner-back-button").click(async () => {
 		$("#learner").addClass("in-background");

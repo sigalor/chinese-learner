@@ -59,13 +59,13 @@ h1.big-heading {
 		max-width: 65vw;
 
 		& > .lecture-button {
-			width: 25vh;
-			height: 25vh;
-			max-width: 13vw;
-			max-height: 13vw;
+			width: 21vh;
+			height: 21vh;
+			max-width: 10vw;
+			max-height: 10vw;
 			border: 1px solid rgba(0, 0, 0, 0.1);
 			background-color: rgba(255, 255, 255, 0.5);
-			margin: 2vh;
+			margin: 1.8vh;
 			transition: transform 0.15s ease-out, border 0.2s, opacity 0.2s;
 
 			display: flex;
@@ -86,13 +86,13 @@ h1.big-heading {
 
 			& > .title {
 				text-transform: uppercase;
-				font-size: 3vh;
+				font-size: 1.3vw;
 				font-weight: 300;
 			}
 
 			& > .sub-title {
 				font-weight: 500;
-				font-size: 1.6vh;
+				font-size: 0.7vw;
 			}
 		}
 	}

@@ -12,14 +12,14 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.17.1",
-    "express": "^4.16.2",
+    "express": "^4.16.3",
     "fs": "0.0.1-security",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.10",
     "path": "^0.12.7",
     "querystring": "^0.2.0"
   },
   "devDependencies": {
-    "concurrently": "^3.5.1",
-    "nodemon": "^1.12.5"
+    "concurrently": "^3.6.0",
+    "nodemon": "^1.17.5"
   }
 }
