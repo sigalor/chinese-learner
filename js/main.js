@@ -284,7 +284,7 @@ function initLearner(lectionIndex) {
 	$("#learner")
 		.empty()
 		.append(backButton)
-		.append(divClass("heading-container").append(tagClass("h1", "big-heading").html(`Lektion ${lectionIndex+1}`)))
+		.append(divClass("heading-container").append(tagClass("h1", "big-heading").html(vocabulary[lectionIndex].name)))
 		.append(createTask(fromLang, toLang, wordObj))
 		.append(createSummary(wordObj, vocabulary[lectionIndex].charCacheFile))
 		.append(createNextButton());
