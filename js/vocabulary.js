@@ -4,7 +4,7 @@
 let vocabulary = [
 	{
 		name: "Lektion 1",
-		charCacheFile: "/cache/lection01_char_cache.json",
+		charCacheFile: "./cache/lection01_char_cache.json",
 		words: [
 			{
 				german: "du, Sie",
