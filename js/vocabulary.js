@@ -45,7 +45,7 @@ let vocabulary = [
 	},
 	{
 		name: "Lektion 2",
-		charCacheFile: "/cache/lection02_char_cache.json",
+		charCacheFile: "./cache/lection02_char_cache.json",
 		words: [
 			{
 				german: "beschäftigt sein",
@@ -126,7 +126,7 @@ let vocabulary = [
 	},
 	{
 		name: "Lektion 3",
-		charCacheFile: "/cache/lection03_char_cache.json",
+		charCacheFile: "./cache/lection03_char_cache.json",
 		words: [
 			{
 				german: "sie (3. Person Singular)",
@@ -207,7 +207,7 @@ let vocabulary = [
 	},
 	{
 		name: "Lektion 4",
-		charCacheFile: "/cache/lection04_char_cache.json",
+		charCacheFile: "./cache/lection04_char_cache.json",
 		words: [
 			{
 				german: "jmd. kennen, kennenlernen",
@@ -318,7 +318,7 @@ let vocabulary = [
 	},
 	{
 		name: "Lektion 5",
-		charCacheFile: "/cache/lection05_char_cache.json",
+		charCacheFile: "./cache/lection05_char_cache.json",
 		words: [
 			{
 				german: "Speisesaal, Restaurant",
@@ -419,7 +419,7 @@ let vocabulary = [
 	},
 	{
 		name: "Lektion 6",
-		charCacheFile: "/cache/lection06_char_cache.json",
+		charCacheFile: "./cache/lection06_char_cache.json",
 		words: [
 			{
 				german: "gehen",
@@ -530,7 +530,7 @@ let vocabulary = [
 	},
 	{
 		name: "Lektion 7",
-		charCacheFile: "/cache/lection07_char_cache.json",
+		charCacheFile: "./cache/lection07_char_cache.json",
 		words: [
 			{
 				german: "mit der Schule/dem Semester beginnen",
@@ -626,7 +626,7 @@ let vocabulary = [
 	},
 	{
 		name: "Lektion 8",
-		charCacheFile: "/cache/lection08_char_cache.json",
+		charCacheFile: "./cache/lection08_char_cache.json",
 		words: [
 			{
 				german: "Familie; Zuhause, Heim",
@@ -757,7 +757,7 @@ let vocabulary = [
 	},
 	{
 		name: "Lektion 9",
-		charCacheFile: "/cache/lection09_char_cache.json",
+		charCacheFile: "./cache/lection09_char_cache.json",
 		words: [
 			{
 				german: "dieses Jahr",
@@ -893,7 +893,7 @@ let vocabulary = [
 	},
 	{
 		name: "Lektion 10",
-		charCacheFile: "/cache/lection10_char_cache.json",
+		charCacheFile: "./cache/lection10_char_cache.json",
 		words: [
 			{
 				german: "in, an, auf",
@@ -1039,7 +1039,7 @@ let vocabulary = [
 	},
 	{
 		name: "Lektion 11",
-		charCacheFile: "/cache/lection11_char_cache.json",
+		charCacheFile: "./cache/lection11_char_cache.json",
 		words: [
 			{
 				german: "können, zu etw. fähig sein",
@@ -1205,7 +1205,7 @@ let vocabulary = [
 	},
 	{
 		name: "Lektion 12",
-		charCacheFile: "/cache/lection12_char_cache.json",
+		charCacheFile: "./cache/lection12_char_cache.json",
 		words: [
 			{
 				german: "an ganzen Körper; ganzer Körper",
@@ -1361,7 +1361,7 @@ let vocabulary = [
 	},
 	{
 		name: "Zahlen und Daten",
-		charCacheFile: "/cache/numbersdates_char_cache.json",
+		charCacheFile: "./cache/numbersdates_char_cache.json",
 		words: [
 			{
 				german: "Null",
