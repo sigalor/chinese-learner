@@ -57,3 +57,7 @@ typings/
 # dotenv environment variables file
 .env
 
+misc/
+.vscode
+.settings
+.sass-cache
