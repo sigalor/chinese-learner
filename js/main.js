@@ -23,7 +23,7 @@ function createLectureButton(index, title, subTitle) {
 function initLectureList() {
 	let lectureList = $("#lecture-list");
 	vocabulary.forEach((v, idx) => {
-		lectureList.append(createLectureButton(idx, `Lektion ${idx+1}`, `${v.words.length} Vokabeln`));
+		lectureList.append(createLectureButton(idx, v.name, `${v.words.length} Vokabeln`));
 	});
 }
 
