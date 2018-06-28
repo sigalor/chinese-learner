@@ -60,3 +60,4 @@ typings/
 misc/
 .vscode
 .settings
+.sass-cache
